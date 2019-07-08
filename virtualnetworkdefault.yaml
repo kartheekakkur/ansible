@@ -1,0 +1,19 @@
+---
+# default
+azure_configname: "Ansible"
+azure_resource_group: myResourceGroup
+azure_virtual_network_NIC: myNIC
+azure_virtual_network: myVnet
+azure_subnet: mySubnet
+azure_public_ip_name: myPublicIP
+azure_security_group: myNetworkSecurityGroup
+
+---
+# varibles
+azure_configname: "Ansible"
+azure_resource_group: AnsibleTest-RG 
+azure_virtual_network_NIC: "NIC"
+azure_virtual_network: "AnsibleVnet"
+azure_subnet: "Subnet"
+azure_public_ip_name: "PublicIP"
+azure_security_group: "NetworkSecurityGroup"

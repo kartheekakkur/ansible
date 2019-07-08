@@ -1,0 +1,19 @@
+---
+- name: Create virtual network
+  azure_rm_virtualnetwork:
+      resource_group: "{{azure_resource_group}}"
+      name: "{{ azure_virtual_network}}"
+      address_prefixes: "10.0.0.0/16"
+- name: Add subnet
+  azure_rm_subnet:
+      resource_group: "{{azure_resource_group}}"
+      name: "{{azure_configname}}{{azure_subnet}}"
+      address_prefix: "10.0.1.0/24"
+      virtual_network: "{{ azure_virtual_network }}"
+- name: Create virtual network interface card
+  azure_rm_networkinterface:
+      resource_group: "{{ azure_resource_group }}"
+      name: "{{azure_configname}}{{ azure_virtual_network_NIC }}"
+      virtual_network: "{{ azure_virtual_network }}"
+      subnet: "{{azure_configname}}{{azure_subnet}}"
+      security_group: "{{ azure_security_group }}"
